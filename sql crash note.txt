@@ -1,0 +1,189 @@
+sql;-structured query language
+Dbms:- DATA BASE MA
+ddl statement :-data defination language statement:- (used to Creat and manage the structure of the DBMS).
+
+1.CREATE:- used to creat the database and table.
+2.ALTER:- used to add new column to existing table.
+		  used to rename the column name.
+		  used to drop coloumn from table.
+		  used to modidfy the coloumn datatype.
+
+3.DROP:-To drop the table from database
+4.TRUNCATE:-to truncate the data from table.
+ 
+Important Syntax:-
+syntax for creating database
+CREAT DATABASE database_name;
+
+CREAT DATABASE aug_20;
+
+cntrk+shift+enter
+
+/*syntax for creating database:*/
+CREATE DATABASE database_name;
+
+CREATE DATABASE aug_20;
+use aug_20;
+/*syntax for creating table
+CREATE TABLE table_name(Column_name1 datatype,Column_name2 datatype,Column_name3 datatype)*/
+CREATE TABLE ipl_teams(id int,team_name varchar(50),venue varchar(20), opposition varchar(30),matchdays varchar(20));
+/*syntax is ued to fetch the data 
+SELECT * FROM table_name;  (*) indicates all columns from table
+select commond is used for only to read the data*/
+SELECT * FROM ipl_teams;
+SELECT id,venue,team_name FROM ipl_teams;
+/*insert is used for insert the data into rows and column and table
+INSERT INTO table_name VALUES(data1,data2,data3);*/
+INSERT INTO ipl_teams VALUES(1,'RCB','Bangalore','Mumbai','Saturday');
+INSERT INTO ipl_teams VALUES(2,'CSK','Bangalore','RR','SUNDAY');
+INSERT INTO ipl_teams VALUES(3,'KKR','Bangalore','SHR','MONDAY');
+
+SELECT * FROM ipl_teams;
+-=========================================================================================================
+21oct2022
+========================================
+DML:-Maintain and managae the data from the tabel.
+_________________________________________________________
+1]insert:-Is used to insert the data into the table.
+2]update:-Is used to modify or update the adta inside the table.
+3]delete:-delete the data  from the table.
+4]select:-Fetch the data from the data.
+_________________________________________________________________
+
+CREATE DATABASE Movie_Details;
+use Movie_Details;
+CREATE TABLE Movie_Details(Slno int	, Movie_Name varchar(50),Hero_Name varchar(50),Ticket_price int,Location_Name varchar(50),collection bigint);
+INSERT INTO Movie_Details VALUES(01,'KGF','YASH',250,'Madhapur',1200);
+INSERT INTO Movie_Details VALUES(02,'Kantharaa','RishabShetty',300,'Navarang',800);
+SELECT * FROM Movie_Details;
+ALTER TABLE Movie_Details ADD COLUMN Director varchar(50) default 'Someone Done';
+/*Syntax for update
+UPDATE TABLE_NAME SET COLUMN_NAME = 'VALUE' WHERE condition;*/
+UPDATE Movie_Details SET Director = 'PRASHANTH NEEL' WHERE ID = 1;
+
+__________________________________________________________________________
+
+CREATE DATABASE Movie_Details;
+use Movie_Details;
+CREATE TABLE Movie_Details(Slno int	, Movie_Name varchar(50),Hero_Name varchar(50),Ticket_price int,Location_Name varchar(50),collection bigint);
+INSERT INTO Movie_Details VALUES(01,'KGF','YASH',250,'Madhapur',1200);
+INSERT INTO Movie_Details VALUES(02,'Kantharaa','RishabShetty',300,'Navarang',800);
+/*
+INSERT INTO Movie_Details VALUES(03,'BB2','Prabhas',500,'u_mall',1200);
+INSERT INTO Movie_Details VALUES(04,'Sahho','Prabhas',350,'PVR_Mall',1250);
+INSERT INTO Movie_Details VALUES(05,'Allu Arjun','ARYA',400,'CHITRA',450);
+INSERT INTO Movie_Details VALUES(06,'RAM ','ORANGE',500,'lullu mall',120);
+*/
+SELECT * FROM Movie_Details;
+/*to update table in a column*/
+ALTER TABLE Movie_Details ADD COLUMN Director varchar(50) default 'Someone Done';
+/*Syntax for update 
+UPDATE TABLE_NAME SET COLUMN_NAME = 'VALUE' WHERE condition;*/
+UPDATE Movie_Details SET Director = 'PRASHANTH NEEL' WHERE slno = 1;
+UPDATE Movie_Details SET Location_Name = 'PVR' WHERE slno = 1;
+UPDATE Movie_Details SET Movie_Name ='charli777',Hero_Name='Rakshit Shetty' WHERE  slno = '1';
+
+/*DELETE :-FROM
+DELETE FROM table_Name WHERE CONDITION;*/
+DELETE FROM Movie_Details WHERE slno=1;
+SELECT * FROM Movie_Details;
+COMMIT;
+ROLLBACK;
+================================================================================================
+22oct2022
+================================================================================================
+AND Operator:
+cond1 cond2 result
+True  false false
+false true  false
+false false false
+true  true  true 
+IN:to print selected column and row.
+It is used to avoid xle use of OR operators
+========================================================
+NOT operator:it is used to print exclude tables of IN operator.
+BETWEEN Operator:It is used to print table within the range.
+===============================================================
+Order BY:it sorts ascending or descending
+But by default it will sort in asceding order
+Use desc for descending.
+AGGREGATE FUNCTIONS :-are used to perform calculations on a column data.
+Aggregate functions are only used for numeric data.
+=====================================================================
+There are 5 aggregate functions
+1.count:returns no of rows in a table or a column.
+2.Sum: It will add all  the data in the particular column.
+3.max:It returns the maximum value in the column.
+4.min:It returns the minimum value in the column.
+5.Avg:It will return the average value from column.
+==================================================================================================
+Avg=sum of values/no of rows  
+LIKE:- Is use to perform the pattern matching and it is use to perform an any length.
+% 
+:- we use Use this ,It can match any String of any length 
+
+Constraints:-Are used to limit the type of the data whenever inserting the data into the table.
+================================================================================================
+Ex:-null data , duplicate data:-These constraints are specified the column while creating the table
+1]Table and 2] column level
+
+Two Five of constraints:-
+3 columnc level constrains:-
+1]Not Null Constraints:-Whenever u apply this ,that column will not accept not null values  but it will accept duplicate values.
+2]Unique:-this column should not accept any duplicate values but it will accept null values…
+3]Check constraints:- is used to limit the range values  (only numerics).
+4]Primary Key:-table level constraint, 
+It will identify the each row
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
