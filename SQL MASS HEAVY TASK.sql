@@ -47,18 +47,7 @@ PHONE_NO VARCHAR(50),AGENT_CODE CHAR(6) NOT NULL,COUST_WEIGHT INT UNIQUE,CUST_HE
 ,CUST_COUNTRY CHAR(2),CUST_RELATIONSHIP_STATUS VARCHAR(50),CUST_ADD_NUM BIGINT UNIQUE,
 primary key(idno,age),FOREIGN KEY(idno,age)references info_human(SL_NO,CUST_HEIGHT));
 
-INSERT INTO CUSTOMER VALUES (1,'C00013', 'Holmes', 'London', 'London', 'UK', '2', '6000.00', '5000.00', '7000.00', '4000.00', 'BBBBBBB',
- 'A003',70,80,001211,'M','UK','SINGLE',888855212222);
-INSERT INTO CUSTOMER VALUES (2,'C00001', 'Micheal', 'New York', 'New York', 'USA', '2', '3000.00', '5000.00', '2000.00', '6000.00', 
-'CCCCCCC', 'A008',69,81,003111,'M','UK','SINGLE',888855232222);
-INSERT INTO CUSTOMER VALUES (3,'C00020', 'Albert', 'New York', 'New York', 'USA', '3', '5000.00', '7000.00', '6000.00', '6000.00', 
-'BBBBSBB', 'A008',68,79,003211,'F','UK','SINGLE',888855242222);
-INSERT INTO CUSTOMER VALUES (4,'C00025', 'Ravindran', 'Bangalore', 'Bangalore', 'India', '2', '5000.00', '7000.00', '4000.00', '8000.00',
- 'AVAVAVA', 'A011',66,78,002111,'F','UK','COMMMITED',888255552222);
-INSERT INTO CUSTOMER VALUES (5,'C00024', 'Cook', 'London', 'London', 'UK', '2', '4000.00', '9000.00', '7000.00', '6000.00', 'FSDDSDF',
- 'A006',67,77,008811,'M','UK','SINGLE',888855262222);
-INSERT INTO CUSTOMER VALUES (6,'C00015', 'Stuart', 'London', 'London', 'UK', '1', '6000.00', '8000.00', '3000.00', '11000.00', 'GFSGERS', 
-'A003',65,76,002311,'F','UK','COMMMITED',88225552222);
+S'A003',65,76,002311,'F','UK','COMMMITED',88225552222);
 INSERT INTO CUSTOMER VALUES (7,'C00002', 'Bolt', 'New York', 'New York', 'USA', '3', '5000.00', '7000.00', '9000.00', '3000.00', 'DDNRDRH', 
 'A008',64,91,002411,'F','UK','COMMMITED',8882155552222);
 INSERT INTO CUSTOMER VALUES (8,'C00018', 'Fleming', 'Brisban', 'Brisban', 'Australia', '2', '7000.00', '7000.00', '9000.00', '5000.00', 
@@ -88,10 +77,11 @@ INSERT INTO CUSTOMER VALUES (19,'C00012', 'Steven', 'San Jose', 'San Jose', 'USA
 INSERT INTO CUSTOMER VALUES (20,'C00008', 'Karolina', 'Torento', 'Torento', 'Canada', '1', '7000.00', '7000.00', '9000.00', '5000.00', 
 'HJKORED', 'A004',56,67,002217,'M','UK','COMMMITED',558855552222);
 
-SELECT * FROM CUSTOMER;
+SELECT * FROM CUSTOMER;select * from EMPLOYEE;
+
 /*======================================================================================================================================================
 ============================================================================================================================================*/
-/*JOINS:-*/
+
 create table info_human(idno int,human_Name varchar(50) unique,human_age int,human_location varchar(50)unique,human_Village varchar(50),human_Taluk varchar(50),
 human_Dist varchar(50),human_state varchar(50),human_Country varchar(50),Pregnancies int,Glucose int,BloodPressure int,	SkinThickness int,
 Insulin int,BMI int not null,DiabetesPedigreeFunction int not null,Age int,Outcome int not null,primary key(idno,age));
@@ -102,7 +92,6 @@ PHONE_NO VARCHAR(50),AGENT_CODE CHAR(6) NOT NULL,COUST_WEIGHT INT UNIQUE,CUST_HE
 primary key(idno,age),FOREIGN KEY(idno,age)references info_human(SL_NO,CUST_HEIGHT));
 
 
-select playars.Player_id as id,playars.real_name as name, Hospital.Patient_id as pid,Hospital.DoctoeName as dname from playars inner join Hospital where player_id=798;
 
 /*======================================================================================================================================================
 ============================================================================================================================================*/
@@ -248,6 +237,26 @@ INSERT INTO EMPLOYEE VALUES(140,'Winston iCharles','Johhnson','CJOHNsSON',514578
 select * from EMPLOYEE;
 /*======================================================================================================================================================
 ============================================================================================================================================*/
+
+
+
+
+select EMPLOYEE.department_IDE as id, CUSTOMER.SL_NO as SLid from CUSTOMER LEFT  join EMPLOYEE on EMPLOYEE.department_IDE =CUSTOMER.SL_NO  ;
+
+
+select EMPLOYEE.department_IDE as id, CUSTOMER.SL_NO as SLid from CUSTOMER right  join EMPLOYEE on EMPLOYEE.department_IDE =CUSTOMER.SL_NO  ;
+
+select EMPLOYEE.department_IDE as id, CUSTOMER.SL_NO as SLid from CUSTOMER INNER  join EMPLOYEE on EMPLOYEE.department_IDE =CUSTOMER.SL_NO  ;
+
+select EMPLOYEE.department_IDE as id, CUSTOMER.SL_NO as SLid from CUSTOMER right OUTER  join EMPLOYEE on EMPLOYEE.department_IDE =CUSTOMER.SL_NO  ;
+
+select EMPLOYEE.department_IDE as id, CUSTOMER.SL_NO as SLid from CUSTOMER LEFT OUTER  join EMPLOYEE on EMPLOYEE.department_IDE =CUSTOMER.SL_NO  ;
+
+select EMPLOYEE.department_IDE as DEPTid, CUSTOMER.SL_NO as SLid from CUSTOMER ,EMPLOYEE;
+;
+
+SELECT * FROM CUSTOMER;select * from EMPLOYEE;
+
 
 
 
