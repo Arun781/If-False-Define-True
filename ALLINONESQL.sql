@@ -85,7 +85,7 @@ SELECT RETAILER_NAME FROM RETAILER_DETAILES WHERE idno =1 OR  idno=2;
 SELECT ltrim(RETAILER_NAME)FROM RETAILER_DETAILES;
 SELECT rtrim(RETAILER_NAME)FROM RETAILER_DETAILES;
 
-SELECT lpad("Sonu" ,15 ,"Xworkz");
+SELECT lpad("Aishu" ,15 ,"Xworkz");
 SELECT rpad("Arun" ,15 ,"Xworkz");
 
 SELECT instr("Arun","r") as position;
